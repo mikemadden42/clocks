@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"time"
+	_ "time/tzdata" // embed zone data so lookups work without an OS tz database
 )
 
 func main() {
