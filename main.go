@@ -1,3 +1,4 @@
+// Command clocks prints the current time in several timezones.
 package main
 
 import (

@@ -4,7 +4,7 @@ Findings from a project review (2026-11-13).
 
 ## Config problems
 
-- [ ] **Migrate `.golangci.yml` to the v2 schema.** `golangci-lint config verify` (v2.15.0) rejects it:
+- [x] **Migrate `.golangci.yml` to the v2 schema.** `golangci-lint config verify` (v2.15.0) rejects it:
   ```
   "version" ... got number, want string
   'disable-all' not allowed
@@ -15,7 +15,7 @@ Findings from a project review (2026-11-13).
   `formatters.settings.goimports.local-prefixes: [github.com/mikemadden42]` and
   `linters.exclusions.paths`. Until then the revive `exported` settings and the
   excluded directories don't take effect.
-- [ ] **Add a package comment to `main.go`.** `make check` reports
+- [x] **Add a package comment to `main.go`.** `make check` reports
   `main.go:1:1: package-comments: should have a package comment (revive)`.
 - [x] **Fix `.goreleaser.yaml` so `goreleaser check` passes.**
   - Add `version: 2` at the top (`only version: 2 configuration files are supported, yours is version: 0`).
@@ -34,7 +34,7 @@ Findings from a project review (2026-11-13).
 
 ## Version mismatches
 
-- [ ] **Pick one minimum Go version.** `go.mod` says `go 1.21`, the commit history says 1.21–1.23,
+- [x] **Pick one minimum Go version.** `go.mod` says `go 1.21`, the commit history says 1.21–1.23,
   and CI tests 1.23–1.25. Go 1.21–1.23 are past end of life. Set a floor such as `go 1.25` in
   `go.mod` and test from there up to the current release.
 - [ ] **Rename the module to `github.com/mikemadden42/clocks`.** The module is currently `clocks`,
@@ -43,7 +43,7 @@ Findings from a project review (2026-11-13).
 
 ## Smaller issues
 
-- [ ] Run the linter (`golangci/golangci-lint-action`) and `goreleaser check` in CI. CI runs
+- [x] Run the linter (`golangci/golangci-lint-action`) and `goreleaser check` in CI. CI runs
   `go test`, but there are no test files.
 - [ ] Remove the duplicated timezone definitions in `main.go` (the map plus the `keys` slice) by
   using a single ordered slice of `{zone, label}` structs. Drop the unneeded `timezone := key` copy.
