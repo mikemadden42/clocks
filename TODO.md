@@ -37,7 +37,7 @@ Findings from a project review (2026-11-13).
 - [x] **Pick one minimum Go version.** `go.mod` says `go 1.21`, the commit history says 1.21–1.23,
   and CI tests 1.23–1.25. Go 1.21–1.23 are past end of life. Set a floor such as `go 1.25` in
   `go.mod` and test from there up to the current release.
-- [ ] **Rename the module to `github.com/mikemadden42/clocks`.** The module is currently `clocks`,
+- [x] **Rename the module to `github.com/mikemadden42/clocks`.** The module is currently `clocks`,
   so the goimports `local-prefixes` setting has no effect, and
   `go install github.com/mikemadden42/clocks@latest` doesn't work.
 
